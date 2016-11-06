@@ -800,10 +800,10 @@ if (typeof Slick === "undefined") {
                         });
                     }
                 });
-                
+
             $headerRowL.empty();
             $headerRowR.empty();
-            
+
             for (var i = 0; i < columns.length; i++) {
                 var m = columns[i];
 
@@ -3052,14 +3052,15 @@ if (typeof Slick === "undefined") {
             if ((activeCell != cell.cell || activeRow != cell.row) && canCellBeActive(cell.row, cell.cell)) {
                 if (!getEditorLock().isActive() || getEditorLock().commitCurrentEdit()) {
                     if (hasFrozenRows) {
-                        if (( !( options.frozenBottom ) && ( cell.row >= actualFrozenRow ) )
-                            || ( options.frozenBottom && ( cell.row < actualFrozenRow ) )
-                            ) {
+                        if ((!(options.frozenBottom) && (cell.row >= actualFrozenRow))
+                            || (options.frozenBottom && (cell.row < actualFrozenRow))
+                        ) {
                             scrollRowIntoView(cell.row, false);
                         }
-
-                        setActiveCellInternal(getCellNode(cell.row, cell.cell));
+                    } else {
+                        scrollRowIntoView(cell.row, false);
                     }
+                    setActiveCellInternal(getCellNode(cell.row, cell.cell));
                 }
             }
         }
