@@ -421,7 +421,7 @@ if (typeof Slick === "undefined") {
                 $viewport
                     //.bind("click", handleClick)
                     .bind("scroll", handleScroll);
-                if (jQuery.fn.mousewheel && ( options.frozenColumn > -1 || hasFrozenRows )) {
+                if (jQuery.fn.mousewheel) {
                     $viewport
                         .bind("mousewheel", handleMouseWheel);
                 }
