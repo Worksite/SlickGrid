@@ -1952,10 +1952,10 @@ if (typeof Slick === "undefined") {
                 }
             }
 
-            stringArrayL.push("</div>");
-
+            stringArrayL[stringArrayL.length] = "</div>";
+            
             if (options.frozenColumn > -1) {
-                stringArrayR.push("</div>");
+                stringArrayR[stringArrayR.length] = "</div>";
             }
         }
 
