@@ -1968,9 +1968,11 @@ if (typeof Slick === "undefined") {
             }
 
             // TODO:  merge them together in the setter
+            var cellClassesForRow;
             for (var key in cellCssClasses) {
-                if (cellCssClasses[key][row] && cellCssClasses[key][row][m.id]) {
-                    cellCss += (" " + cellCssClasses[key][row][m.id]);
+                cellClassesForRow = cellCssClasses[key][row];
+                if (cellClassesForRow && cellClassesForRow[m.id]) {
+                    cellCss += (" " + cellClassesForRow[m.id]);
                 }
             }
 
