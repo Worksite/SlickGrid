@@ -2196,7 +2196,7 @@ if (typeof Slick === "undefined") {
                 'top': $paneHeaderL.height(), 'height': paneTopH
             });
 
-            var paneBottomTop = $paneTopL.css('position') ? $paneTopL.position().top : paneTopH + paneTopH;
+            var paneBottomTop = ( $paneTopL.css('position') ? $paneTopL.position().top : paneTopH ) + paneTopH;
 
             $viewportTopL.height(viewportTopH);
 
