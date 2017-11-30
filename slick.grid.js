@@ -2033,8 +2033,9 @@ if (typeof Slick === "undefined") {
                 return;
             }
 
-            cacheEntry.rowNode[0].parentElement.removeChild(cacheEntry.rowNode[0]);
-
+            if(cacheEntry.rowNode) {
+                cacheEntry.rowNode[0].parentElement.removeChild(cacheEntry.rowNode[0]);
+            }
             // Remove the row from the right viewport
             if (cacheEntry.rowNode[1]) {
                 cacheEntry.rowNode[1].parentElement.removeChild(cacheEntry.rowNode[1]);
@@ -2195,8 +2196,7 @@ if (typeof Slick === "undefined") {
                 'top': $paneHeaderL.height(), 'height': paneTopH
             });
 
-            var paneBottomTop = $paneTopL.position().top
-                + paneTopH;
+            var paneBottomTop = $paneTopL.css('position') ? $paneTopL.position().top : paneTopH + paneTopH;
 
             $viewportTopL.height(viewportTopH);
 
